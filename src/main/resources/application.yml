@@ -12,7 +12,7 @@ security:
 
 spring:
   application:
-    name: gateway-service
+    name: product-shop
   cloud:
     gateway:
       discovery:
