@@ -20,6 +20,11 @@ public class DataBaseConfig {
     @Bean
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
+        System.out.println();
+        System.out.println();
+        System.out.println(System.getenv("DATABASE_URL"));
+        System.out.println();
+        System.out.println();
         config.setJdbcUrl(dbUrl);
         config.setUsername(userName);
         config.setPassword(password);
