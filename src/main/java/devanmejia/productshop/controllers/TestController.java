@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
     @Autowired
-    private CartServiceImpl cartProductService;
-
+    private TestRepository repository;
 
     @GetMapping
-    public void test(){
-
+    public String test(){
+        return repository.test();
     }
 }
