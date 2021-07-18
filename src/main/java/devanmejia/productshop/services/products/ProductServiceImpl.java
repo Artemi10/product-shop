@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
     public Product createNewProduct(ProductDTO productDTO){
         String productName = productDTO.getName();
         Optional<Product> productOptional = productRepository.findByName(productName);
-        if (productOptional.isEmpty()){
+        if (!productOptional.isPresent()){
             Product product = Product.builder()
                     .name(productName)
                     .price(productDTO.getPrice())

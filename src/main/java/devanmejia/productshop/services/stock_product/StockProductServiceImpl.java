@@ -42,7 +42,7 @@ public class StockProductServiceImpl implements StockProductService{
         String productName = product.getName();
         Optional<StockProduct> stockProductOptional =
                 stockProductRepository.findByProductName(productName);
-        if (stockProductOptional.isEmpty()){
+        if (!stockProductOptional.isPresent()){
             StockProduct stockProduct = StockProduct.builder()
                     .product(product)
                     .amount(0).build();

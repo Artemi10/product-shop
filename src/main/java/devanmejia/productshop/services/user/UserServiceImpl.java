@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User generateNewUser(AccountForm form){
         Optional<Account> userOptional = accountRepository.getAccountByUserLogin(form.getUserLogin());
-        if (userOptional.isEmpty()){
+        if (!userOptional.isPresent()){
             User user = User.builder()
                     .login(form.getUserLogin())
                     .firstName(form.getUserFirstName())
