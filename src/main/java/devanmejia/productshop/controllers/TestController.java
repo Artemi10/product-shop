@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/test")
@@ -14,7 +16,7 @@ public class TestController {
     private TestRepository repository;
 
     @GetMapping
-    public String test(){
+    public List<String> test(){
         return repository.test();
     }
 }
