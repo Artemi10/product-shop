@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/shop/admin/**").hasAuthority(Role.ROLE_ADMIN.name())
                 .antMatchers("/shop/order/*/cartProducts").hasAnyAuthority(Role.ROLE_ADMIN.name(), Role.ROLE_USER.name())
-                .antMatchers("/shop/stockProducts/**", "/shop/account/**", "/test/**").permitAll()
+                .antMatchers("/shop/stockProducts/**", "/shop/account/**").permitAll()
                 .anyRequest().hasAuthority(Role.ROLE_USER.name())
                 .and().apply(new JWTSecurityConfig(jwtProvider));
     }
